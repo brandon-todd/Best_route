@@ -26,10 +26,7 @@ hotel_rates = {
 def temp_func(route):
     """This function takes permutations of possible routes of the trip in the dictionary database
     and returns the average temperature of that route"""
-    temp = 0
-    for i in range(len(route)):
-        temp += city_temps[route[i]][i]
-    return temp/days
+    return sum([city_temps[route[i]][i] for i in range(len(route))])/days
 
 def cost_func(hotels):
     """This function takes combinations of possible hotels for the trip in the dictionary database and
